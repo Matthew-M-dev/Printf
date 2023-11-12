@@ -4,4 +4,8 @@
 #include <limits.h>
 #include <stdio.h>
 
+/* Prototype */
+int _printf(const char *format, ...);
+
+
 #endif
