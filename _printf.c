@@ -1,15 +1,15 @@
-#include <stdio.h>
-#include <stdarg.h>
 #include "main.h"
 /**
- * _printf -main entryi
- * @format: input
- * Return: Always 0 (success)
+ * _printf - Prints formatted output to the standard output.
+ * @format: A format string that specifies the output format.
+ *
+ * Return: The no. of chars printed (excluding the NULL byte).
  */
 int _printf(const char *format, ...)
 {
 	int i;
 	va_list ap;
+
 	va_start(ap, format);
 
 	for (i = 0; format[i] != '\0'; i++)
@@ -22,12 +22,14 @@ int _printf(const char *format, ...)
 				case 'c':
 				{
 					char c = va_arg(ap, int);
+
 					putchar(c);
 					break;
 				}
 				case 's':
 				{
 					char *s = va_arg(ap, char*);
+
 					while (*s != '\0')
 					{
 						putchar(*s);
@@ -54,8 +56,3 @@ int _printf(const char *format, ...)
 	va_end(ap);
 	return (0);
 }
-
-
-
-
-
