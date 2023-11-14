@@ -70,7 +70,6 @@ int _printf(const char *format, ...)
 					count += print_string(args);
 					break;
 				case '%':
-					putchar('%');
 					count += print_percent(args);
 					break;
 				default:
