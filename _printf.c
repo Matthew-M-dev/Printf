@@ -68,12 +68,9 @@ int _printf(const char *format, ...)
 					count += print_char(args);
 					break;
 				case '%':
-<<<<<<< HEAD
 				{
 					putchar('%');
-=======
-					count += print_percent(args);
->>>>>>> f03221a4db61d1df287c41fcfa928a27ca321d42
+					count += print_percent(args
 					break;
 				default:
 					putchar(format[i]);
