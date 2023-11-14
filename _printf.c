@@ -30,18 +30,7 @@ int print_string(va_list args)
 	}
 	return (count);
 }
-/**
- * print_percent - Print a percent sign.
- * @args: Unused.
- *
- * Return: The total number of chars printed.
- */
-int print_percent(va_list args)
-{
-	(void)args;
-	putchar('%');
-	return (1);
-}
+
 /**
  * _printf - Custom printf function.
  * @format: A format string containing specifiers.
@@ -70,7 +59,7 @@ int _printf(const char *format, ...)
 					count += print_string(args);
 					break;
 				case '%':
-					count += print_percent(args);
+					putchar('%');
 					break;
 				default:
 					putchar(format[i]);
