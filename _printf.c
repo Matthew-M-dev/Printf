@@ -37,7 +37,7 @@ int _printf(const char *format, ...)
 				}
 				case '%':
 				{
-					putchar(' ');
+					putchar('%');
 					break;
 				}
 				default:
