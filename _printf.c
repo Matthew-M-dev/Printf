@@ -19,7 +19,7 @@ int print_char(va_list args)
  */
 int print_string(va_list args)
 {
-	char *s = va_arg(args, char*);
+	char *s = va_arg(args, char *);
 	int count = 0;
 
 	while (*s != '\0')
@@ -55,7 +55,6 @@ int _printf(const char *format, ...)
 	va_list args;
 
 	va_start(args, format);
-
 	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] == '%')
@@ -67,10 +66,12 @@ int _printf(const char *format, ...)
 				case 'c':
 					count += print_char(args);
 					break;
+				case 's':
+					count += print_string(args);
+					break;
 				case '%':
-				{
 					putchar('%');
-					count += print_percent(args
+					count += print_percent(args);
 					break;
 				default:
 					putchar(format[i]);
