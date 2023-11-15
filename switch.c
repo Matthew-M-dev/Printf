@@ -56,10 +56,10 @@ int _putstr(char *str)
 {
 	int i = 0;
 
-	while (str[i])
+	while (*str)
 	{
-		write(1, &str[i], 1);
-		i++;
+		i += _putchar(*str);
+		str++;
 	}
 	return (i);
 }
