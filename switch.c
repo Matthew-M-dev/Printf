@@ -41,6 +41,7 @@ int switchCase(va_list args, const char *format, int i)
 		default:
 			_putchar('%');
 			count += 2;
+			break;
 	}
 	va_end(args);
 	return (count);
