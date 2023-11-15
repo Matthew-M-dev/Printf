@@ -20,11 +20,8 @@ int switchCase(va_list args, const char *format, int i)
 	{
 		case 's':
 			s = va_arg(args, char *);
-			if (s != NULL)
-			{
-				count += _putstr(s);
-			}
-			else
+			count += _putstr(s);
+			if (s == NULL)
 			{
 				count += _putstr("(null)");
 			}
