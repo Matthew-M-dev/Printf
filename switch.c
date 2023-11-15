@@ -20,10 +20,13 @@ int switchCase(va_list args, const char *format, int i)
 	{
 		case 's':
 			s = va_arg(args, char *);
-			count += _putstr(s);
 			if (s == NULL)
 			{
 				count += _putstr("(null)");
+			}
+			else
+			{
+				count += _putstr(s);
 			}
 			break;
 		case 'c':
@@ -41,7 +44,6 @@ int switchCase(va_list args, const char *format, int i)
 			count += 2;
 			break;
 	}
-	va_end(args);
 	return (count);
 }
 /**
