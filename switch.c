@@ -44,6 +44,7 @@ int switchCase(va_list args, const char *format, int i)
 			count += 2;
 			break;
 	}
+	va_end(args);
 	return (count);
 }
 /**
