@@ -31,15 +31,15 @@ int switchCase(va_list args, const char *format, int i)
 			break;
 		case 'c':
 			c = va_arg(args, int);
-			putchar(c);
+			_putchar(c);
 			count++;
 			break;
 		case '%':
-			putchar('%');
+			_putchar('%');
 			count += 1;
 			break;
 		default:
-			putchar('%');
+			_putchar('%');
 			count += 2;
 	}
 	va_end(args);
