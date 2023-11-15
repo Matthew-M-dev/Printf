@@ -22,7 +22,7 @@ int switchCase(va_list args, const char *format, int i)
 			s = va_arg(args, char *);
 			if (s != NULL)
 			{
-				count += puts (s);
+				count += _putstr(s);
 			}
 			else
 			{
