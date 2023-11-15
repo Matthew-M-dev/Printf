@@ -21,12 +21,18 @@ int print_string(va_list args)
 {
 	char *s = va_arg(args, char *);
 	int count = 0;
-
-	while (*s != '\0')
+	if (s != NULL)
 	{
-		putchar(*s);
-		s++;
-		count++;
+		while (*s != '\0')
+		{
+			putchar(*s);
+			s++;
+			count++;
+		}
+	}
+	else
+	{
+		puts ("(null)");
 	}
 	return (count);
 }
@@ -44,6 +50,8 @@ int _printf(const char *format, ...)
 	va_list args;
 
 	va_start(args, format);
+	if (format == NULL)
+		puts ("(null)");
 	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] == '%')
