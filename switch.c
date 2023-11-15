@@ -26,7 +26,7 @@ int switchCase(va_list args, const char *format, int i)
 			}
 			else
 			{
-				count += _putstr(s);
+				count += puts (s);
 			}
 			break;
 		case 'c':
