@@ -24,6 +24,7 @@ int main(void)
 	_printf("%s", "this sentence is retrieved from vas_args!\n");
 	_printf("complete the sentence: you %s nothing, Jon Snow.\n", "know");
 	_printf("%c%cth %s%s a%cg%s: Y%sou %s no%ching%s Snow.%c", 'W', 'i', "some ", "more", 'r', "s", "", "know", 't', " , jon", '\n');
+	_printf(NULL);
 	_printf("Length:[%d, %i]\n", len, len);
 	printf("Length:[%d, %i]\n", len2, len2);
 	_printf("Negative:[%d]\n", -762534);
