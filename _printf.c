@@ -1,74 +1,37 @@
 #include "main.h"
+#include <stdarg.h>
+#include <stdio.h>
+#include <stdlib.h>
 /**
- * print_char - Print a character.
- * @args: A va_list containing the character to print.
- * Return: The number of chars printed (always 1).
+ * _printf - function that produces output
+ * @format: a character string
+ * Return: string length
  */
-int print_char(va_list args)
-{
-	char c = va_arg(args, int);
 
-	putchar(c);
-	return (1);
-}
-/**
- * print_string - Prints a string.
- * @args: A va_list containing the string to print.
- *
- * Return: The number of characters printed.
- */
-int print_string(va_list args)
-{
-	char *s = va_arg(args, char *);
-	int count = 0;
-
-	while (*s != '\0')
-	{
-		putchar(*s);
-		s++;
-		count++;
-	}
-	return (count);
-}
-
-/**
- * _printf - Custom printf function.
- * @format: A format string containing specifiers.
- *
- * Return: The total no. of chars  printed.
- */
 int _printf(const char *format, ...)
 {
-	int i;
-	int count = 0;
+	int i = 0, count = 0, k = 0;
 	va_list args;
 
+	if (format == NULL)
+		return (-1);
 	va_start(args, format);
 	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] == '%')
 		{
 			i++;
-
-			switch (format[i])
+			if (format[i] == '\0')
+				return (-1);
+			if (format[i] != '\0')
 			{
-				case 'c':
-					count += print_char(args);
-					break;
-				case 's':
-					count += print_string(args);
-					break;
-				case '%':
-					putchar('%');
-					break;
-				default:
-					putchar(format[i]);
-					count++;
+				k = switchCase(args, format, i);
+				count += k;
 			}
 		}
 		else
 		{
-			putchar(format[i]);
+			_putchar(format[i]);
 			count++;
 		}
 	}
