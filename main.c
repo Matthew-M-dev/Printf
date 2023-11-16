@@ -13,8 +13,8 @@ int main(void)
 	printf("%s\n", "boy");
 	_printf("Let's print a simple sentence.\n");
 	printf("Let's print a simple sentence.\n");
-	_printf("%c", 'S');
-	printf("%c", 'S');
+	_printf("%c\n", 'S');
+	printf("%c\n", 'S');
 	_printf("A char inside a sentence: %c. Did it work?\n", 'F');
 	printf("A char inside a sentence: %c. Did it work?\n", 'F');
 	_printf("Let'see if the cast is correctly done: %c. Did it work?\n", 48);
