@@ -20,13 +20,13 @@ int switchCase(va_list args, const char *format, int i)
 	{
 		case 's':
 			s = va_arg(args, char *);
-			if (s == NULL)
+			if (s != NULL)
 			{
-				count += _putstr("(null)");
+				count += _putstr(s);
 			}
 			else
 			{
-				count += _putstr(s);
+				count += _putstr("(null)");
 			}
 			break;
 		case 'c':
@@ -57,10 +57,10 @@ int _putstr(char *str)
 {
 	int i = 0;
 
-	while (*str)
+	while (str[i])
 	{
-		i += putchar(*str);
-		str++;
+		write(1, &str[i], 1);
+		i++;
 	}
 	return (i);
 }
