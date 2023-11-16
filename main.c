@@ -16,6 +16,10 @@ int main(void)
 	printf("%d\n", num);
 	_printf("%s\n", "boy");
 	printf("%s\n", "boy");
+	_printf("%d\n", INT_MAX);
+	printf("%d\n", INT_MAX);
+	_printf("%d\n", INT_MIN);
+	printf("%d\n", INT_MIN);
 	_printf("Negative:[%d]\n", -762534);
 	printf("Negative:[%d]\n", -762534);
 	_printf("Let's print a simple sentence.\n");
@@ -40,7 +44,5 @@ int main(void)
 	printf("Should print a single percent sign: %%\n");
 	_printf("%s%c%c%c%s%%%s%c", "Loading ", '.', '.', '.', " 99", " Please wait", '\n');
 	printf("%s%c%c%c%s%%%s%c", "Loading ", '.', '.', '.', " 99", " Please wait", '\n');
-	_printf("css%ccs%scscscs", 'T', "Test");
-	printf("css%ccs%scscscs", 'T', "Test");
 	return (0);
 }

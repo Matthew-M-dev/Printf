@@ -7,29 +7,30 @@
 int negativePositiveInt(int n)
 {
 	int count = 0;
+	unsigned int positive_n;
 	
 	if (n < 0)
 	{
 		_putchar('-');
 		count++;
-		n = -n;
+		n = n * (-1);
 	}
+	positive_n = n;
 	if (n == 0)
 	{
 		_putchar('0');
 		count++;
 	}
-	else if (n <= 9)
+	else if (positive_n <= 9)
 	{
-		_putchar(n + '0');
+		_putchar(positive_n + '0');
 		count++;
 	}
 	else
 	{
-		count += negativePositiveInt(n / 10);
-		_putchar((n % 10) + '0');
+		count += negativePositiveInt(positive_n / 10);
+		_putchar((positive_n % 10) + '0');
 		count++;
 	}
 	return (count);
 }
-
