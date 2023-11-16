@@ -9,8 +9,15 @@
  */
 int main(void)
 {
+	int num = 5;
+	
+	num = -num;
+	putchar('-');
+	printf("%d\n", num);
 	_printf("%s\n", "boy");
 	printf("%s\n", "boy");
+	_printf("Negative:[%d]\n", -762534);
+	printf("Negative:[%d]\n", -762534);
 	_printf("Let's print a simple sentence.\n");
 	printf("Let's print a simple sentence.\n");
 	_printf("%c\n", 'S');

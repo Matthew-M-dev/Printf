@@ -38,6 +38,10 @@ int switchCase(va_list args, const char *format, int i)
 			_putchar('%');
 			count += 1;
 			break;
+		case 'd':
+		case 'i':
+			count += negativePositiveInt(va_arg(args, int));
+			break;
 		default:
 			_putchar('%');
 			_putchar(format[i]);
